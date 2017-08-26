@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>jiraPanelMaker</title>
+	<meta http-equiv="Content-Language" content="en">
+	<meta name="google" content="notranslate">
+	<link rel="stylesheet" href="dist/css/styles.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="./img/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="./img/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./img/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="./img/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./img/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="./img/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./img/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="./img/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="./img/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="./img/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.2/mustache.min.js"></script> -->
+</head>
+<body>
+
+	<div id="siteWrap" class="wrap">
+
+		<header class="site-header grid">
+
+			<div class="triggers">
+				<!-- <div id="js-config" class="trigger trigger--config fa fa-cog"></div> -->
+				<div id="js-info" class="trigger trigger--info fa fa-info"></div>
+			</div>
+
+			<div id="welcome-modal" class="mfp-hide white-popup-block">
+				<h2>Welcome</h2>
+				<p><strong>JIRA Panel Maker</strong> is a simple tool to make it easy to create Acceptance Criteria panels for JIRA.</p>
+				<p>If this is your first visit, be sure to click on the <span class="fa fa-info"></span> icon at the top of the screen to learn how to use the tool.</p>
+				<button title="Close (Esc)" type="button" data-trigger="close-modal" class="mfp-close">&#215;</button>
+			</div>
+
+			<div class="unit whole">
+				<div class="logo">
+					<img id="header-logo" class="logo__img" src="img/jiraPanelMaker_logo.svg" onerror="this.onerror=null;this.src='img/mf-openr_logo.png'">
+					JIRA Panel Maker
+				</div>
+				<!-- <h1 class="heading--h1">JIRA Panel Maker</h1>
+				<h2 class="heading--h2">A UI for creating JIRA panels</h2> -->
+			</div>
+
+		</header>
+
+		<div class="off-canvas">
+
+			<div class="close-panel">
+				<div id="js-close-info" class="trigger--close fa fa-times"></div>
+			</div>
+
+			<div id="gdz-panel-tabs-container" class="panel-tabs">
+
+				<ul class="gdz-tabs" role="tablist">
+					<li class="gdz-tabs__tab active" data-tab="tab-instructions-intro"><i class="fa fa-info"></i></li>
+					<li class="gdz-tabs__tab" data-tab="tab-instructions-title"><strong>Title</strong></li>
+					<li class="gdz-tabs__tab" data-tab="tab-instructions-list"><strong>List</strong></li>
+					<li class="gdz-tabs__tab" data-tab="tab-instructions-output"><strong>Output</strong></li>
+				</ul>
+
+				<div id="tab-instructions-intro" class="gdz-tabs__area active">
+
+					<div class="gdz-tabs__content">
+
+						<h3>Instructions</h3>
+
+						<h4>Quick start:</h4>
+						<ol class="list_alpha">
+							<li>Enter number and title</li>
+							<li>Enter sub criteria text</li>
+							<li>Reorder list as required</li>
+							<li>Copy the generated code to the JIRA description</li>
+						</ol>
+
+						<h4>More detail:</h4>
+						<ul class="">
+							<li><a href="#" data-action="nav-tab" data-target="tab-instructions-title">Acceptance Criterion Title</a></li>
+							<li><a href="#" data-action="nav-tab" data-target="tab-instructions-list">Acceptance Criterion List</a></li>
+							<li><a href="#" data-action="nav-tab" data-target="tab-instructions-list">Panel Output</a></li>
+						</ol>
+
+						<div class="unit whole container container--page-nav">
+
+							<nav class="form-group unit whole tab-nav">
+								<div class="next">
+									<button data-action="nav-tab" data-target="tab-instructions-title" class="btn btn-tertiary chevron">Title</button>
+								</div>
+							</nav>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div id="tab-instructions-title" class="gdz-tabs__area">
+
+					<div class="gdz-tabs__content">
+
+						<h3>Acceptance Criterion title</h3>
+
+						<p>To create the panel heading, simply add a criterion number and/or title into the boxes and click the <em>Edit AC Title</em> button.</p>
+
+						<p>To edit an existing heading, simply enter new value into the box you wish to change. This will update the heading and the panel output code.</p>
+
+						<div class="unit whole container container--page-nav">
+
+							<nav class="form-group unit whole tab-nav">
+								<div class="previous">
+									<button data-action="nav-tab" data-target="tab-instructions-intro" class="btn btn-tertiary chevron--back">Intro</button>
+								</div>
+								<div class="next">
+									<button data-action="nav-tab" data-target="tab-instructions-list" class="btn btn-tertiary chevron">List</button>
+								</div>
+							</nav>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div id="tab-instructions-list" class="gdz-tabs__area">
+
+					<div class="gdz-tabs__content">
+
+						<h3>Sub-criteria list</h3>
+
+						<p>To create an ordered list of criteria, simply enter each one into the text area and click the <em>Add Sub AC</em> button.</p>
+
+						<p>The list can then be reordered by dragging the <span class="fa fa-bars"></span> icon up or down.</p>
+
+						<h4>Deleting items</h4>
+						<ul>
+							<li>You can delete individual sub-criteria by clicking the <span class="fa fa-trash"></span> icon next to the text.</li>
+							<li>Clicking the <em>Clear all criteria</em> button will delete <strong>the entire list</strong>. This action can be undone.</li>
+						</ul>
+
+						<div class="unit whole container container--page-nav">
+
+							<nav class="form-group unit whole tab-nav">
+								<div class="previous">
+									<button data-action="nav-tab" data-target="tab-instructions-title" class="btn btn-tertiary chevron--back">Intro</button>
+								</div>
+								<div class="next">
+									<button data-action="nav-tab" data-target="tab-instructions-output" class="btn btn-tertiary chevron">Output</button>
+								</div>
+							</nav>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div id="tab-instructions-output" class="gdz-tabs__area">
+
+					<div class="gdz-tabs__content">
+
+						<h3>Panel code output</h3>
+
+						<p>Once a list is created, the relevant panel code is generated. This can be viewed in the output tab, labelled with the <span class="fa fa-code"></span> icon.</p>
+
+						<p>Clicking the <em>Copy code</em> button, will copy the markup to your clipboard. This can then be pasted into the <strong>description</strong> area in a JIRA ticket to display a nicely formatted panel.</p>
+
+						<h4>Panel demo</h4>
+						<p>To see how the finished panel will look, you can pop up a demo by clicking the <em>View demo</em> button.</p>
+
+						<div class="unit whole container container--page-nav">
+
+							<nav class="form-group unit whole tab-nav">
+								<div class="previous">
+									<button data-action="nav-tab" data-target="tab-instructions-list" class="btn btn-tertiary chevron--back">List</button>
+								</div>
+								<div class="next">
+									<!-- <button data-action="nav-tab" data-target="tab-instructions-intro" class="btn btn-tertiary chevron">Next</button> -->
+								</div>
+							</nav>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<section class="section__options wider grid">
+
+			<div id="gdz-page-tabs-container" class="unit whole page-tabs">
+
+				<ul class="gdz-tabs" role="tablist">
+					<li class="gdz-tabs__tab active" data-tab="tab-acceptance-criteria"><i class="fa fa-sort-amount-asc"></i></li>
+					<li class="gdz-tabs__tab" data-tab="tab-code-output"><i class="fa fa-code"></i></li>
+					<!-- <li class="gdz-tabs__tab" data-tab="tab-code"><i class="fa fa-terminal"></i></li> -->
+				</ul>
+
+				<!-- Tab content for Acceptance Criteria panels -->
+				<div id="tab-acceptance-criteria" class="gdz-tabs__area active">
+					<div class="gdz-tabs__content">
+
+						<div class="grid container">
+
+							<div class="unit whole container container--criteria-entry">
+
+								<h3 class="heading--h3">Acceptance Criterion title</h3>
+
+								<div class="field criterion-details">
+
+									<div class="criterion-details__item criterion-details__number">
+										<input id="criterionNumberInput" name="criterionNumberInput" type="text" placeholder="No.">
+									</div>
+
+									<div class="criterion-details__item criterion-details__title">
+										<input id="criterionTitleInput" name="criterionTitleInput" type="text" placeholder="eg. Add call to action on Extras page.">
+									</div>
+
+									<div class="criterion-details__item criterion-details__btn">
+										<button id="addCriterionButton" class="btn btn-secondary">Edit AC Title</button>
+									</div>
+
+								</div>
+
+							</div>
+
+
+							<div class="unit whole container container--criteria-entry">
+
+								<h3 class="heading--h3">Sub-criteria</h3>
+
+								<div class="field criterion-details">
+
+									<div class="criterion-details__item criterion-details__text">
+										<textarea name="criterion" id="criterionTextarea" cols="30" rows="5" placeholder="eg. The button should be visible."></textarea>
+									</div>
+
+									<div class="criterion-details__item criterion-details__btn">
+
+										<button id="addSubCriterionButton" data-trigger="open-modal" class="btn btn-secondary">Add Sub AC</button>
+
+									</div>
+
+								</div>
+
+							</div>
+
+
+							<div class="unit whole container container--feedback-panel">
+
+								<div class="feedback-panel">
+
+									<div id="success" class="success-anim">
+										<svg class="success-tick" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 37 37">
+											<path class="circ path" style="fill:none;stroke:#00ce9b;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" d="
+												M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z"
+												/>
+											<polyline class="tick path" style="fill:none;stroke:#00ce9b;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+												11.6,20 15.9,24.2 26.4,13.8 "/>
+										</svg>
+									</div>
+
+									<div id="messages-container" class="message-output"></div>
+									<div id="string-container" class="message-output"></div>
+
+								</div>
+
+							</div>
+
+
+							<div class="unit whole container container--criteria-list">
+
+								<div class="criteria-list-output">
+
+									<div class="criteria-list">
+
+										<div id="acceptanceCriteriaHeading" class="criteria-list__heading">
+
+											<script id="criteria-header-template" type="text/template">
+												{{#criteriaHeader}}
+												<div class="criterion__header-row">
+													<div class="criterion__text">
+														<span id="criterionNumberContainer" class="criterion__number">{{header.acNumber}}</span>
+														<span id="criterionTitleContainer" class="criterion__title">{{header.acTitle}}</span>
+													</div>
+												</div>
+												{{/criteriaHeader}}
+											</script>
+
+										</div>
+
+										<div id="acceptanceCriteriaList" class="sub-criteria">
+
+											<script id="criteria-template" type="text/template">
+												{{#criteria}}
+												<div class="sub-criterion__row sub-criterion__data-row">
+
+													<div class="sub-criterion__handle">
+														<i class="fa fa-bars"></i>
+													</div>
+
+													<div class="sub-criterion__number"></div>
+
+													<div class="sub-criterion__text">{{.}}</div>
+
+													<div data-action="delete" class="sub-criterion__delete">
+														<i class="fa fa-trash"></i>
+													</div>
+
+												</div>
+												{{/criteria}}
+											</script>
+
+										</div>
+
+									</div>
+
+									<div class="criteria-list__item clear-criteria-btn">
+										<button id="clearCriteriaButton" class="btn btn-primary">Clear all criteria</button>
+										<a id="undoLink" href="#" class="undo-link hidden">Undo delete?</a>
+									</div>
+
+
+								</div>
+
+							</div>
+
+
+							<div class="unit whole container container--page-nav">
+
+								<nav class="form-group unit whole tab-nav">
+									<div class="next">
+										<button data-action="nav-tab" data-target="tab-code-output" class="btn btn-tertiary chevron">View panel code</button>
+									</div>
+								</nav>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+
+				<!-- Tab content for Output panels -->
+				<div id="tab-code-output" class="gdz-tabs__area">
+					<div class="gdz-tabs__content">
+
+						<div class="grid container container--output">
+
+							<div class="unit whole">
+
+								<h3 class="heading--h3">Output</h3>
+
+								<div class="field code-output">
+
+									<div class="code-output__item code-output__text">
+										<textarea name="code" id="codeOutputArea" cols="30" rows="5" placeholder="Code output will appear here."></textarea>
+									</div>
+
+									<div class="criterion-details__item criterion-details__btn">
+
+										<button id="copyBtn" data-clipboard-target="#codeOutputArea" data-action="copyCode" class="btn btn-primary--go">Copy code</button>
+
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="unit whole container container--page-nav">
+
+								<nav class="form-group unit whole tab-nav">
+									<div class="previous">
+										<button data-action="nav-tab" data-target="tab-acceptance-criteria" class="btn btn-tertiary chevron--back">Back to list</button>
+									</div>
+									<div class="next open-demo-btn">
+										<button id="viewDemoButton" data-trigger="open-demo" class="btn btn-secondary mfp-inline">View demo</button>
+									</div>
+								</nav>
+
+							</div>
+
+							<div id="panelDemo" class="unit whole container container--jira-view mfp-hide">
+
+								<h3 class="heading--h3">Panel demo</h3>
+
+								<div id="jiraView" class="jira-view">
+
+									<script id="jira-view-template" type="text/template">
+										{{#jiraView}}
+											<div class="panel" style="border-color: {{ style.borderColor }};border-width: 1px;">
+											<div class="panelHeader" style="border-bottom-width: 1px;border-bottom-color: {{ style.borderColor }};background-color: {{ style.titleBGColor }};">
+												<b>AC{{ header.acNumber }}: {{ header.acTitle }}</b>
+											</div>
+											<div class="panelContent">
+												<div class="table-wrap">
+													<table class="confluenceTable">
+														<tbody>
+															{{#subCriteria}}
+															<tr>
+																<td class="confluenceTd"><img class="emoticon" src="https://crystalski.atlassian.net/images/icons/emoticons/lightbulb.png" height="16" width="16" align="absmiddle" alt="" border="0"></td>
+																<th class="confluenceTh">{{ header.acNumber }}.{{ num }}</th>
+																<td class="confluenceTd">{{ str }}</td>
+															</tr>
+															{{/subCriteria}}
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+										{{/jiraView}}
+									</script>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+
+			</div>
+
+		</section>
+
+
+		<footer class="footer__main">
+
+			<section class="section__footer grid">
+				<div class="unit whole">
+					<p class="copyright">&copy; 2017 Simon Gordon</p>
+				</div>
+			</section>
+
+		</footer>
+
+
+	</div>
+
+	<script src="dist/js/app.js"></script>
+	<!-- <script src="src/js/pattern.js"></script> -->
+
+</body>
+</html>

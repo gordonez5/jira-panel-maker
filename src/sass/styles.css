@@ -1,0 +1,314 @@
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+ol {
+	margin: 0;
+}
+
+
+body {
+	background: #ccc;
+	color: #252a32;
+	font-family: sans-serif;
+	font-size: 1.4rem;
+	margin: 0;
+}
+
+.wrap {
+	margin: 0 auto;
+	background: #fff;
+	overflow: hidden;
+}
+
+.grid .unit.whole {
+	padding-right: 10px;
+}
+@media screen and (max-width: 568px) {
+	.grid .unit.whole {
+		padding-right: 20px;
+	}
+}
+
+.wrap .hr {
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 0 0 1px;
+	display: block;
+	height: 0;
+	margin: 0 auto;
+	width: 75%
+}
+
+h1, h2, h3 {
+	margin-top: 0;
+}
+
+::selection {
+	background: #ffd72e; /* WebKit/Blink Browsers */
+	color: #252a32;
+}
+::-moz-selection {
+	background: #ffd72e; /* Gecko Browsers */
+	color: #252a32;
+}
+
+.heading--h1 {
+	color: #005959;
+	font-size: 4em;
+	font-weight: 400;
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+.heading--h2 {
+	font-weight: 400;
+	text-align: center;
+}
+
+.info-box {
+	border-color: #cee1e1;
+	border-style: solid;
+	border-width: 1px;
+	/*margin-bottom: 1em;*/
+}
+.info-box.active {
+	border-color: #005959;
+}
+
+.info-box .header {
+	background-color: #F5FDFB;
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+
+.info-box.expandable > .header:after {
+	background-image: url(http://www.crystalski.co.uk/static/img/crystal/arrow-sprite.png);
+	background-repeat: no-repeat;
+	background-position: 2px -370px;
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 1em;
+	width: 1em;
+	height: 1em;
+	margin-top: -11px;
+}
+
+.info-box.expandable.active > .header:after {
+	background-position: 2px -400px;
+}
+
+.info-box .header h3 {
+	color: #005959;
+	font-size: 1em;
+	margin: 0;
+	padding: 0.75em;
+	text-transform: uppercase;
+}
+
+.info-box.expandable > .header h3 {
+	cursor: pointer;
+	padding-right: 1em;
+}
+
+.info-box .content {
+	display: none;
+	padding: 1em;
+	position: relative;
+	overflow: hidden;
+}
+
+.info-box.expandable.active .content {
+	display: block;
+}
+
+.container {
+	overflow: hidden;
+}
+
+.section__options .container {
+	/*display: inline-block;*/
+	vertical-align: top;
+}
+
+.wrap .section__tool {
+	margin-top: 2em;
+}
+
+.container--folder {
+}
+
+.container--radios {
+	display: inline-block;
+}
+
+.container--checks {
+	/*max-width: 30%;*/
+	margin-left: 2rem;
+}
+
+.container label {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+.field {
+	padding: 0 0 1rem 0;
+}
+
+.field label {
+	min-width: 8rem;
+}
+
+.container--folder label,
+.container--code label {
+	display: block;
+	margin-bottom: 0.5em;
+}
+
+.checks {
+	/*display: inline-block;*/
+	float: left;
+	/*max-width: 45%;*/
+	padding: 0 1rem 1rem;
+}
+
+.checks label {
+	display: block;
+	margin: 0.5rem 0;
+}
+
+.checks input,
+.checks span {
+	margin: 0.5rem 0.25rem;
+}
+
+.container input[type="text"] {
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 2px;
+	display: inline-block;
+	font-size: 1.8rem;
+	margin-right: 1rem;
+	min-width: 15rem;
+	padding: 0.5rem;
+}
+
+.container input[type="text"]:focus,
+.container textarea:focus {
+	border-color: #005959;
+	outline: 0;
+	-webkit-transition: border-color 0.2s ease-out;
+	-moz-transition: border-color 0.2s ease-out;
+	transition: border-color 0.2s ease-out;
+}
+
+.container--folder input[type="text"] {
+	width: 100%;
+}
+
+.btn {
+	border-style: solid;
+	border-width: 0 0 4px;
+	border-radius: 2px;
+	cursor: pointer;
+	font-size: 1.8rem;
+	padding: 1rem 1.5rem;
+	text-align: center;
+	text-decoration: none;
+	min-width: 15rem;
+	position: relative;
+}
+
+.btn-primary {
+	background-color: #c0023e;
+	border-color: #a70236;
+	color: #fff;
+}
+
+.btn-primary:hover {
+	background-color: #a70236;
+}
+
+.btn-primary:after {
+	background-image: url(http://www.crystalski.co.uk/static/images/crystalbrand/generalicons/arrow-sprite.png);
+	background-repeat: no-repeat;
+	background-position: 2px -340px;
+	content: '';
+	width: 2rem;
+	height: 2rem;
+	position: absolute;
+	top: 14px;
+	right: 1rem;
+}
+
+.btn-secondary {
+	background-color: #e5e5e5;
+	border-color: #ccc;
+	color: #252a32;
+}
+
+.btn-secondary:hover {
+	background-color: #d8d8d8;
+}
+
+
+
+.run,
+.checkall {
+	clear: left;
+	margin: 1rem 0;
+	text-align: right;
+}
+
+.container textarea {
+	border-color: #cee1e1;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 2px;
+	font-family: consolas, monospace;
+	/*font-size: 1rem;*/
+	width: 100%;
+	padding: 1em 1em 1em 3em;
+}
+
+.container textarea:focus {
+	background-color: #252a32;
+	color: #fff;
+}
+
+.textarea-wrap {
+	position: relative;
+}
+
+.textarea-wrap:before {
+	color: #ccc;
+	content: '$';
+	position: absolute;
+	/*width: 10px;*/
+	/*height: 10px;*/
+	top: 14px;
+	left: 24px;
+}
+
+/* FOOTER */
+
+.footer__main .section__footer {
+	background-color: #005959;
+	border-color: #005959;
+	border-style: solid;
+	border-width: 0;
+	color: #fff;
+	margin-top: 3rem;
+	padding-top: 2rem;
+}
+.copyright {
+	text-align: center;
+}

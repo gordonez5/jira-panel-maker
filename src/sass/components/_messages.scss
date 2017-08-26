@@ -1,0 +1,57 @@
+.feedback-panel {
+	display: flex;
+	align-content: stretch;
+}
+
+.message-output {
+	flex-grow: 1;
+}
+
+.message {
+
+	@include border( red, solid, 2px );
+	border-radius: 2px;
+	margin-bottom: 1em;
+	opacity: 0;
+	padding: 1rem;
+	transition: opacity 2s;
+
+	&--success {
+		border-color: $fenwayGreen;
+		background-color: $colorFour;
+		color: $fenwayGreen;
+	}
+
+	&.active {
+		opacity: 0.8;
+	}
+
+	h4 {}
+
+	&__heading {}
+
+	&__text {}
+
+}
+
+.modal {
+	position: relative;
+	background: #eee;
+	padding: 1rem;
+	width: auto;
+	max-width: 500px;
+	margin: 1rem auto;
+}
+
+.mfp-content {
+	background-color: #fefefe;
+	padding: 2rem;
+	max-width: 800px;
+	width: 80%;
+
+	p {
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}

@@ -1,0 +1,82 @@
+// Simple tabs
+
+.page-tabs {
+	margin: 0 auto;
+	padding: 0 1rem;
+	@media screen and (min-width: 569px) {
+		// max-width: 700px;
+	}
+}
+
+.panel-tabs {
+	margin: 2rem auto;
+	padding: 0 1rem;
+	@media screen and (min-width: 569px) {
+		max-width: 700px;
+	}
+}
+
+.gdz-tabs {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.gdz-tabs__tab {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 2rem;
+	line-height: 1;
+	margin-right: 0.25rem;
+	min-width: 5rem;
+	padding: 0.5rem;
+	text-align: center;
+	z-index: 2;
+	.page-tabs &,
+	.panel-tabs & {
+		background-color: $dkgrey;
+		border-color: $vdkgrey;
+		border-bottom-color: $colorOne;
+		border-style: solid;
+		border-width: 1px;
+		border-radius: 2px 2px 0 0;
+		color: $vdkgrey;
+		// text-transform: uppercase;
+	}
+	&.active {
+		.page-tabs &,
+		.panel-tabs & {
+			background-color: $white;
+			border-color: $colorOne;
+			border-bottom-color: $white;
+			// border-width: 1px;
+			color: $colorOne;
+		}
+	}
+}
+
+
+.gdz-tabs__content {
+	display: none;
+	margin: -1px 0 0;
+	padding: 1rem;
+
+	.page-tabs &,
+	.panel-tabs & {
+		background: $white;
+		border-color: $colorOne;
+		border-style: solid;
+		border-width: 1px;
+		border-radius: 0 2px 2px 2px;
+	}
+
+	h4 {
+		margin: 0 0 ( $unit-default / 2 );
+	}
+
+	.active & {
+		display: inherit;
+	}
+
+}
+

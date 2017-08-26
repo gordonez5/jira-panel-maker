@@ -1,0 +1,1 @@
+var Gdz = Gdz || {};

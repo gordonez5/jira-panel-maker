@@ -1,0 +1,15 @@
+.*
+!.gitignore
+
+css-toggle-switch/
+node_modules/
+
+dist/*
+dist/css/maps/
+
+fonts/
+
+src/packages/
+src/js/vendor/
+*.ai
+meta.txt
